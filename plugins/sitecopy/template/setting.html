@@ -1,0 +1,27 @@
+<div class="table">
+	<div class="title">
+		请选择要复制的站点：
+		<span class="note">请选择在创建新站点时要复制的站点</span>
+	</div>
+	<div class="content">
+		<select name="sitecopy_id">
+		<option value="">不复制站点</option>
+		<!-- loop from=$sitelist key=$key value=$value id=$tmpid -->
+		<option value="{$value.id}"{if $rs.param.sitecopy_id == $value.id} selected{/if}>{$value.title}</option>
+		<!-- /loop -->
+		</select>
+	</div>
+</div>
+<div class="table">
+	<div class="title">
+		站点内容数据：
+		<span class="note">设置是否复制站点内容数据</span>
+	</div>
+	<div class="content">
+		<ul class="layout">
+			<li><label><input type="radio" name="sitecopy_data" value="0"{if !$rs.param.sitecopy_data} checked{/if} />不复制</label></li>
+			<li><label><input type="radio" name="sitecopy_data" value="1"{if $rs.param.sitecopy_data} checked{/if} />复制</label></li>
+		</ul>
+		<div class="clear"></div>
+	</div>
+</div>

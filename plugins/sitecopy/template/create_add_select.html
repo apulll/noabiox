@@ -1,0 +1,8 @@
+<div style="display:none" id="show_tips_sitecopy">
+	创建完网站后，请到站点管理那里执行数据复制，为保证复制的信息完整，请先不要在新站里加东西
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("input[type=submit]").after('<br />'+$("#show_tips_sitecopy").html());
+});
+</script>

@@ -1,0 +1,17 @@
+<script type="text/javascript">
+function copy_site_data()
+{
+	var url = get_url('plugin','exec','id=sitecopy&exec=copyit');
+	$.dialog.open(url,{
+		'title':'站点复制',
+		'width':'750px',
+		'height':'70%',
+		'lock':true,
+		'resize':false,
+		'drag':false
+	});
+}
+</script>
+<div style="margin-bottom:20px;text-align:center;">
+<input type="button" value="站点数据复制" onclick="copy_site_data()" class="phpok-btn" />
+</div>
