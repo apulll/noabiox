@@ -1,27 +1,27 @@
-<!-- include tpl=head menutitle=网站首页 -->
-<!-- php:$list = phpok('picplayer') -->
-<!-- if $list.total -->
-<div class="banner index-banner indexbanner"{if $list.project.height} style="height:{$list.project.height}px;"{/if}>
+<?php if(!defined("PHPOK_SET")){exit("<h1>Access Denied</h1>");} ?><?php $menutitle="网站首页";?><?php $this->assign("menutitle","网站首页"); ?><?php $this->output("head","file"); ?>
+<?php $list = phpok('picplayer');?>
+<?php if($list['total']){ ?>
+<div class="banner index-banner indexbanner"<?php if($list['project']['height']){ ?> style="height:<?php echo $list['project']['height'];?>px;"<?php } ?>>
 	<div class="bd">
 	<ul>
-		<!-- loop from=$list.rslist key=$key value=$value -->
-		<li class="nbox b-1"><a href="{$value.link}" target="{$value.target}" title="{$value.title}"><img src="{#images#}/blank.gif" _src="{$value.banner.filename}"  alt="{$value.title}"{if $list.project.height} style="height:{$list.project.height}px;"{/if} /></a></li>
-		<!-- /loop -->
+		<?php $list_rslist_id["num"] = 0;$list['rslist']=is_array($list['rslist']) ? $list['rslist'] : array();$list_rslist_id["total"] = count($list['rslist']);$list_rslist_id["index"] = -1;foreach($list['rslist'] AS $key=>$value){ $list_rslist_id["num"]++;$list_rslist_id["index"]++; ?>
+		<li class="nbox b-1"><a href="<?php echo $value['link'];?>" target="<?php echo $value['target'];?>" title="<?php echo $value['title'];?>"><img src="images/blank.gif" _src="<?php echo $value['banner']['filename'];?>"  alt="<?php echo $value['title'];?>"<?php if($list['project']['height']){ ?> style="height:<?php echo $list['project']['height'];?>px;"<?php } ?> /></a></li>
+		<?php } ?>
 	</ul>
 	</div>
 	<div class="hd">
 	<ul>
-		<!-- loop from=$list.rslist key=$key value=$value id=tmpid -->
+		<?php $tmpid["num"] = 0;$list['rslist']=is_array($list['rslist']) ? $list['rslist'] : array();$tmpid["total"] = count($list['rslist']);$tmpid["index"] = -1;foreach($list['rslist'] AS $key=>$value){ $tmpid["num"]++;$tmpid["index"]++; ?>
 		<li></li>
-		<!-- /loop -->
+		<?php } ?>
 	</ul>
 	</div>
 </div>
 
 <!-- <div class="banner index-banner">
     <div id="banner">
-      <div class="nbox b-1" style="background-image:url(images/banner.png)"></div>
-      <div class="nbox b-1" style="background-image:url(images/banner.png)"></div>
+      <div class="nbox b-1" style="background-image:url(tpl/www/images/banner.png)"></div>
+      <div class="nbox b-1" style="background-image:url(tpl/www/images/banner.png)"></div>
     </div>
   </div> -->
 
@@ -31,7 +31,7 @@ $(document).ready(function(){
 	$(".indexbanner").slide({'autoPlay':true,'switchLoad':'_src','mainCell':'.bd ul'});
 });
 </script>
-<!-- /if -->
+<?php } ?>
 <section>
     <div class="about-section">
       <div class="content about-content">
@@ -45,7 +45,7 @@ $(document).ready(function(){
             <li><a href="honor.html"><i class="icon-about icon-4"></i><p>资质荣誉</p></a></li>
           </ul>
         </div>
-        <div class="about-img"><img src="images/about-img.png" alt=""></div>
+        <div class="about-img"><img src="tpl/www/images/about-img.png" alt=""></div>
       </div>
     </div>
     <div class="develop-section">
@@ -85,7 +85,7 @@ $(document).ready(function(){
     </div>
     <div class="airticle-section">
       <div class="content airticle-content">
-        <div class="img"><img src="images/airticle-b.png" alt=""></div>
+        <div class="img"><img src="tpl/www/images/airticle-b.png" alt=""></div>
         <div class="airticle-type">
           <ul>
             <li><h3>学术中心</h3><h4>《Science》报道首项小胶质细胞大规模表征研</h4><p>科学家们首次表征了大脑小胶质细胞（一种免疫防御细胞）的特异表现出来症状，正是一种科学家们研究的方向。</p><a href="academic.html" class="btn">学术中心</a></li>
@@ -107,7 +107,7 @@ $(document).ready(function(){
       </div>
     </div>
     <div class="map content">
-      <img src="images/map.png" alt="">
+      <img src="tpl/www/images/map.png" alt="">
     </div>
   </section>
 <script type="text/javascript">
@@ -123,4 +123,4 @@ $(document).ready(function(){
 </script>
 
 
-<!-- include tpl=foot -->
+<?php $this->output("foot","file"); ?>

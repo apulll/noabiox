@@ -1,31 +1,69 @@
-<?php if(!defined("PHPOK_SET")){exit("<h1>Access Denied</h1>");} ?><div class="link">
-	<ul class='clearfix'>
-		<?php $link = phpok('link');?>
-		<li class="title"><?php echo $link['project']['title'];?>：</li>
-		<?php $tmpid["num"] = 0;$link['rslist']=is_array($link['rslist']) ? $link['rslist'] : array();$tmpid["total"] = count($link['rslist']);$tmpid["index"] = -1;foreach($link['rslist'] AS $key=>$value){ $tmpid["num"]++;$tmpid["index"]++; ?>
-		<li><a href="<?php echo $value['url'];?>" target="<?php echo $value['target'];?>" title="<?php echo $value['title'];?>"><?php echo $value['title'];?></a></li>
-		<?php } ?>
-	</ul>
-</div>
-<div class="foot">
-	<div class="copyright"><?php echo $config['ext']['content'];?></div>
-	<?php if($sys['debug']){ ?><div class="debug"><?php echo debug_time('1','1','1','1');?></div><?php } ?>
-</div>
-<?php $list = phpok('online-service');?>
-<?php if($list['project'] && $list['rslist']){ ?>
-<div id="right-float-box" class="im_floatonline">
-	<div class="float-box-content">
-		<div class="toptitle"><?php echo $list['project']['title'];?></div>
-		<div class="addlist">
-			<ul>
-				<?php $list_rslist_id["num"] = 0;$list['rslist']=is_array($list['rslist']) ? $list['rslist'] : array();$list_rslist_id["total"] = count($list['rslist']);$list_rslist_id["index"] = -1;foreach($list['rslist'] AS $key=>$value){ $list_rslist_id["num"]++;$list_rslist_id["index"]++; ?>
-				<li><?php echo $value['title'];?><br /><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=<?php echo $value['qq'];?>&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:<?php echo $value['qq'];?>:51" alt="点击这里给我发消息" title="点击这里给我发消息"/></a></li>
-				<?php } ?>
-			</ul>
-		</div>
-	</div>
-</div>
-<?php } ?>
+<?php if(!defined("PHPOK_SET")){exit("<h1>Access Denied</h1>");} ?><footer class="footer">
+    <div class="f-nav">
+      <div class="content">
+        <div class="menu">
+          <div class="col col-1">
+            <h3>产品中心</h3>
+            <ul>
+              <li><a href="">菌粉原料产品</a></li>
+              <li><a href="">发酵原料产品</a></li>
+              <li><a href="">产品应用</a></li>
+            </ul>
+          </div>
+          <div class="col col-1">
+            <h3>关于诺佰克</h3>
+            <ul>
+              <li><a href="">企业概况</a></li>
+              <li><a href="">使命与责任</a></li>
+              <li><a href="">核心与优势</a></li>
+              <li><a href="">资质荣誉</a></li>
+            </ul>
+            <h3>研发中心</h3>
+            <ul>
+              <li><a href="">科研实力</a></li>
+              <li><a href="">核心技术</a></li>
+            </ul>
+          </div>
+          <div class="col col-1">
+            <h3>学术中心</h3>
+            <ul>
+              <li><a href="">行业知识</a></li>
+              <li><a href="">学术前沿</a></li>
+              <li><a href="">学术会议</a></li>
+            </ul>
+            <h3>新闻中心</h3>
+            <ul>
+              <li><a href="">企业新闻</a></li>
+              <li><a href="">行业新闻</a></li>
+            </ul>
+          </div>
+          <div class="col col-1">
+            <h3>联系我们</h3>
+            <ul>
+              <li><a href="">商务合作</a></li>
+              <li><a href="">人才合作</a></li>
+            </ul>
+            <h3>国家微生态中心</h3>
+          </div>
+          <div class="contact-box">
+            <h3>诺佰克(武汉)生物科技有限公司</h3>
+            <ul>
+              <li>地址 : 湖北省武汉市汉南区纱帽街育才路551号</li>
+              <li>网址 : www.noabiox.com</li>
+              <li>邮箱 : nbk@noabiox.com</li>
+              <li>联系电话 : +86 27 5190 9933</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="copyright content">
+      <p>京ICP备11017824号-4      京ICP证130164号     Copyright © 2006-2017 诺佰克</p>
+      <div class="fr"><img src="tpl/www/images/b-logo.png" alt=""> <a href="" class="back-top"></a></div>
+    </div>
+    
+
+  </footer>
 <?php echo phpok_head_css();?>
 <?php echo phpok_head_js();?>
 <?php echo $app->plugin_html_ap("phpokbody");?></body>
