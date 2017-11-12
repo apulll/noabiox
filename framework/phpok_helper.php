@@ -925,3 +925,6 @@ function token_userid()
 	return $GLOBALS['app']->lib('token')->encode($info);
 }
 
+function get_aa_bb($info) {
+	// print_r($info);
+}
