@@ -928,3 +928,16 @@ function token_userid()
 function get_aa_bb($info) {
 	// print_r($info);
 }
+
+function phpok_active($string)
+{
+	$query =  $_SERVER["QUERY_STRING"];
+
+	$p = strrpos($query,$string);
+	print($aa);
+	if($p) {
+		return 'current';
+	}
+	return '';
+	// return $GLOBALS['app']->lib("string")->cut($string,$length,$dot);
+}

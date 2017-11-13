@@ -1,0 +1,10 @@
+
+
+<div class="sec-nav">
+	<ul>
+	    <!-- catelist pid=$page_rs.id -->
+		<!-- loop from=$list.sublist key=$key value=$value id=$tmpid -->
+		<li{if $cate_rs.id == $value.id} class="current"{/if}><a href="{$value.url}" title="{$value.title}">{func phpok_cut $value.title 15 …}</a></li>
+		<!-- /loop -->
+	</ul>
+</div>
