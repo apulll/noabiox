@@ -1,4 +1,5 @@
 <?php if(!defined("PHPOK_SET")){exit("<h1>Access Denied</h1>");} ?><?php $menutitle="网站首页";?><?php $this->assign("menutitle","网站首页"); ?><?php $this->output("head","file"); ?>
+<link rel="stylesheet" type="text/css" href="tpl/www/css/index.css">
 <script src="tpl/www/js/jquery.bxslider.min.js"></script>
 <script type="text/javascript" src="tpl/www/js/index.js"></script>
 

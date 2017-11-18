@@ -1,7 +1,7 @@
-<!-- php:$title = $cate_rs ? $cate_rs.title.' - '.$page_rs.title : $page_rs.title -->
-<!-- include tpl=head title=$title menutitle=$page_rs.title -->
+<?php if(!defined("PHPOK_SET")){exit("<h1>Access Denied</h1>");} ?><?php $title = $cate_rs ? $cate_rs['title'].' - '.$page_rs['title'] : $page_rs['title'];?>
+<?php $title=$title;?><?php $this->assign("title",$title); ?><?php $menutitle=$page_rs['title'];?><?php $this->assign("menutitle",$page_rs['title']); ?><?php $this->output("head","file"); ?>
 <div class="banner product-banner">
-    <div class="nbox" {if $page_rs.banner} style="background-image:url('{$page_rs.banner.gd.auto}')"{/if}></div>
+    <div class="nbox" <?php if($page_rs['banner']){ ?> style="background-image:url('<?php echo $page_rs['banner']['gd']['auto'];?>')"<?php } ?>></div>
   </div>
 
 <section>
@@ -47,21 +47,21 @@
           </div>
         </div>
         <div class="section-main">
-          <div class="tit">{$cate_rs.title}</div>
+          <div class="tit"><?php echo $cate_rs['title'];?></div>
           <div class="products-list">
             <ul>
-              <!-- loop from=$rslist key=$key value=$value id=$tmpid -->
-              <!-- php:$thumb = current($value.thumb) -->
-              <li><a href="{$value.url}" class="p-box"><span class="img"><img src="{$thumb.gd.thumb}" alt=""><span class="v-am"></span></span><h3>{$value.title}</h3><p>{$value.note}</p></a></li>
-			 <!-- /loop -->
+              <?php $tmpid["num"] = 0;$rslist=is_array($rslist) ? $rslist : array();$tmpid["total"] = count($rslist);$tmpid["index"] = -1;foreach($rslist AS $key=>$value){ $tmpid["num"]++;$tmpid["index"]++; ?>
+              <?php $thumb = current($value['thumb']);?>
+              <li><a href="<?php echo $value['url'];?>" class="p-box"><span class="img"><img src="<?php echo $thumb['gd']['thumb'];?>" alt=""><span class="v-am"></span></span><h3><?php echo $value['title'];?></h3><p><?php echo $value['note'];?></p></a></li>
+			 <?php } ?>
             </ul>
             
           </div>
         </div>
       </div>
-      <!-- include tpl=block_pagelist -->
+      <?php $this->output("block_pagelist","file"); ?>
 
     </div>
 </section>
 
-<!-- include tpl=foot -->
+<?php $this->output("foot","file"); ?>

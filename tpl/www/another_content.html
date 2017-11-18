@@ -1,0 +1,19 @@
+<!-- php:$title = $rs.title.' - '.$page_rs.title -->
+<!-- include tpl=head title=$title menutitle=$page_rs.title -->
+<div class="banner about-banner">
+    <div class="nbox" {if $page_rs.banner} style="background-image:url('{$page_rs.banner.gd.auto}')"{/if}></div>
+  </div>
+  <section>
+    <div class="content">
+      <div class="sec-nav">
+        <ul>
+          <!-- include tpl=block_new_rslist -->
+        </ul>
+      </div>
+      <div class="article-content {$rs.content_class}">
+        {$rs.content}
+      </div>
+    </div>
+  </section>
+
+<!-- include tpl=foot -->

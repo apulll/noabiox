@@ -1,4 +1,4 @@
-<?php if(!defined("PHPOK_SET")){exit("<h1>Access Denied</h1>");} ?><?php echo tpl_head(array('title'=>$title,'css'=>"tpl/www/css/reset.css,tpl/www/css/css.css,tpl/www/css/index.css,artdialog.css",'js'=>"tpl/www/js/global.js,jquery.artdialog.js",'html5'=>"true"));?>
+<?php if(!defined("PHPOK_SET")){exit("<h1>Access Denied</h1>");} ?><?php echo tpl_head(array('title'=>$title,'css'=>"tpl/www/css/reset.css,tpl/www/css/css.css,artdialog.css",'js'=>"tpl/www/js/global.js,jquery.artdialog.js",'html5'=>"true"));?>
 <body>
 
 
