@@ -15,7 +15,8 @@
 			<?php if($value['thumb']){ ?>
 			<a href="<?php echo $value['url'];?>" title="<?php echo $value['title'];?>"><img src="<?php echo $value['thumb']['gd']['auto'];?>" alt="<?php echo $value['title'];?>" /></a>
 			<?php } ?>
-			<h3><a href="<?php echo $value['url'];?>" title="<?php echo $value['title'];?>"><?php echo $value['title'] ? phpok_cut($value['title'],20,'…') : phpok_cut($value['title'],20,'…');?><span class="fr"><?php echo $value['dateline'];?></span></a></h3>
+			<?php $dateline = phpok_date($value['dateline']);?>
+			<h3><a href="<?php echo $value['url'];?>" title="<?php echo $value['title'];?>"><?php echo $value['title'] ? phpok_cut($value['title'],20,'…') : phpok_cut($value['title'],20,'…');?><span class="fr"><?php echo $dateline;?></span></a></h3>
 			<p class="desc"><?php echo $value['note'] ? phpok_cut($value['note'],225,'…') : phpok_cut($value['content'],225,'…');?></p>
 			<div class="more"><a href="<?php echo $value['url'];?>" title="查看<?php echo $value['title'];?>详细信息">了解详情 <i></i></a></div>
 			</div>

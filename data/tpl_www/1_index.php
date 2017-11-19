@@ -104,7 +104,7 @@
     </div>
     
     <?php $arc = phpok('xszx');?>
-    <pre><?php echo print_r($arc);?></pre>
+    <!-- <pre><?php echo print_r($arc);?></pre> -->
   </section>
 <script type="text/javascript">
 $(document).ready(function(){

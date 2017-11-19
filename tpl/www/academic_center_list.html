@@ -15,7 +15,8 @@
 			<!-- if $value.thumb -->
 			<a href="{$value.url}" title="{$value.title}"><img src="{$value.thumb.gd.auto}" alt="{$value.title}" /></a>
 			<!-- /if -->
-			<h3><a href="{$value.url}" title="{$value.title}">{$value.title ? phpok_cut($value.title,20,'…') : phpok_cut($value.title,20,'…')}<span class="fr">{$value.dateline}</span></a></h3>
+			<!-- php:$dateline = phpok_date($value.dateline) -->
+			<h3><a href="{$value.url}" title="{$value.title}">{$value.title ? phpok_cut($value.title,20,'…') : phpok_cut($value.title,20,'…')}<span class="fr">{$dateline}</span></a></h3>
 			<p class="desc">{$value.note ? phpok_cut($value.note,225,'…') : phpok_cut($value.content,225,'…')}</p>
 			<div class="more"><a href="{$value.url}" title="查看{$value.title}详细信息">了解详情 <i></i></a></div>
 			</div>

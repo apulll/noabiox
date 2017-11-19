@@ -934,10 +934,16 @@ function phpok_active($string)
 	$query =  $_SERVER["QUERY_STRING"];
 
 	$p = strrpos($query,$string);
-	print($aa);
+	// print($aa);
 	if($p) {
 		return 'current';
 	}
 	return '';
 	// return $GLOBALS['app']->lib("string")->cut($string,$length,$dot);
+}
+
+function phpok_date($time)
+{
+	
+	return date("Y-m-d",$time);
 }
