@@ -1,8 +1,9 @@
 <?php if(!defined("PHPOK_SET")){exit("<h1>Access Denied</h1>");} ?><?php $title = $cate_rs ? $cate_rs['title'].' - '.$page_rs['title'] : $page_rs['title'];?>
 <?php $title=$title;?><?php $this->assign("title",$title); ?><?php $menutitle=$page_rs['title'];?><?php $this->assign("menutitle",$page_rs['title']); ?><?php $this->output("head","file"); ?>
 <div class="banner product-banner">
-    <div class="nbox" <?php if($page_rs['banner']){ ?> style="background-image:url('<?php echo $page_rs['banner']['gd']['auto'];?>')"<?php } ?>></div>
-  </div>
+	<div class="nbox" <?php if($page_rs['banner']){ ?> style="background-image:url('<?php echo $page_rs['banner']['gd']['auto'];?>')"<?php } ?>></div>
+</div>
+
 
 <section>
     <div class="content">
@@ -18,32 +19,7 @@
       <div class="section-content product-section">
         <div class="left">
           <div class="cate-list">
-            <ul>
-              <li><div class="m current"><span class="t">菌粉原料产品</span><i class="arrow"></i></div>
-                <ul style="display:block">
-                  <li class="current"><a href="product.html">功能性菌粉</a></li>
-                  <li><a href="product2.html">乳制品直投式发酵剂</a></li>
-                  <li><a href="product3.html">果蔬直投式发酵剂</a></li>
-                  <li><a href="product4.html">动物用菌粉</a></li>
-                </ul>
-              </li>
-              <li><div class="m"><span class="t">发酵原料产品</span><i class="arrow"></i></div>
-                <ul>
-                  <li><a href="">功能性菌粉</a></li>
-                  <li><a href="">乳制品直投式发酵剂</a></li>
-                  <li><a href="">果蔬直投式发酵剂</a></li>
-                  <li><a href="">动物用菌粉</a></li>
-                </ul>
-              </li>
-              <li><div class="m"><span class="t">产品应用</span><i class="arrow"></i></div>
-                <ul>
-                  <li><a href="">功能性菌粉</a></li>
-                  <li><a href="">乳制品直投式发酵剂</a></li>
-                  <li><a href="">果蔬直投式发酵剂</a></li>
-                  <li><a href="">动物用菌粉</a></li>
-                </ul>
-              </li>
-            </ul>
+            <?php $this->output("block_catelist_product","file"); ?>
           </div>
         </div>
         <div class="section-main">
@@ -63,5 +39,5 @@
 
     </div>
 </section>
-
+<script src="tpl/www/js/product.js"></script>
 <?php $this->output("foot","file"); ?>

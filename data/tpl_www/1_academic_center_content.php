@@ -14,8 +14,6 @@
         <div class="art-content">
           <?php echo $rs['content'];?>
           
-          
-          
         </div>
 
 

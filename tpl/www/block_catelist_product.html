@@ -1,10 +1,13 @@
-
-
-<div class="sec-nav">
-	<ul>
-	    <!-- catelist pid=$page_rs.id -->
-		<!-- loop from=$list.sublist key=$key value=$value id=$tmpid -->
-		<li{if $cate_rs.id == $value.id} class="current"{/if}><a href="{$value.url}" title="{$value.title}">{func phpok_cut $value.title 15 …}</a></li>
-		<!-- /loop -->
-	</ul>
-</div>
+<ul>
+  <!-- catelist pid=$page_rs.id -->
+  <!-- loop from=$list.tree key=$key value=$value1 id=$tmpid -->
+<!--   <pre>{:print_r($cate_rs)}</pre> -->
+  <li><div class="m {if $cate_rs.parent_id == $value1.id} current {/if}"><span class="t">{$value1.title}</span><i class="arrow"></i></div>
+    <ul style="display:block">
+      <!-- loop from=$value1.sublist key=$key value=$value id=$tmpid -->
+      <li {if $cate_rs.id == $value.id} class="current"{/if}><a href="{$value.url}" title="{$value.title}">{func phpok_cut $value.title 15 …}</a></li>
+      <!-- /loop -->
+    </ul>
+  </li>
+  <!-- /loop -->
+</ul>

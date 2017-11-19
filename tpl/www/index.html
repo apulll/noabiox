@@ -90,10 +90,11 @@
       <div class="content contact-content">
         <div class="contact-box">
           <div class="tit">联系我们</div>
-          <div class="desc">我们非常愿意为你们<br>提供高品质、有设计的产品和有情谊的服务<br>这是一种天性使然的默契<br>我们是一家人</div>
+          <!-- php:$contact = phpok('contact') -->
+          <div class="desc">{$contact.content}</div>
           <ul class="list">
-            <li><a href="contact.html"><i class="icon-contact icon-1"></i><p>商务合作</p></a></li>
-            <li><a href="job.html"><i class="icon-contact icon-2"></i><p>人才合作</p></a></li>
+            <li><a href="/index.php?id=cbd"><i class="icon-contact icon-1"></i><p>商务合作</p></a></li>
+            <li><a href="/index.php?id=person"><i class="icon-contact icon-2"></i><p>人才合作</p></a></li>
           </ul>
         </div>
       </div>
@@ -103,7 +104,7 @@
     </div>
     
     <!-- php:$arc = phpok('xszx') -->
-    <!-- <pre>{:print_r($arc)}</pre> -->
+    <pre>{:print_r($arc)}</pre>
   </section>
 <script type="text/javascript">
 $(document).ready(function(){

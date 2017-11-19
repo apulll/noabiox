@@ -31,7 +31,7 @@ $config["db"]["file"] = "mysqli";
 $config["db"]["host"] = "127.0.0.1";
 $config["db"]["port"] = "3306";
 $config["db"]["user"] = "root";
-$config["db"]["pass"] = "root";
+$config["db"]["pass"] = "";
 $config["db"]["data"] = "noabiox";
 $config["db"]["prefix"] = "noab_";
 $config["db"]['socket'] = '';
@@ -44,8 +44,8 @@ $config["db"]['debug'] = false;
  * @参数 default 值可选true或false，值为true时，在PC端也是打开手机站风格，便于开发人员调试。正式使用时请关闭
  * @更新时间 
 **/
-$config['mobile']['autocheck'] = true;
-$config['mobile']['status'] = true;
+$config['mobile']['autocheck'] = false;
+$config['mobile']['status'] = false;
 $config['mobile']['default'] = false;
 
 /**
