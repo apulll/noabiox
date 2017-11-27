@@ -79,9 +79,14 @@
 
           <ul>
           	<?php $xszx = phpok('xszx');?>
-            <li><h3>学术中心</h3><h4><?php echo $xszx['title'];?></h4><p><?php echo $xszx['note'];?></p><a href="<?php echo $xszx['url'];?>" class="btn">学术中心</a></li>
+            <li><h3>学术中心</h3>
+              <?php $first = phpok_current($xszx['rslist']);?>
+              <h4><?php echo $first['title'];?></h4><p><?php echo $first['note'];?></p><a href="<?php echo $first['url'];?>" class="btn">学术中心</a>
+              
+            </li>
             <?php $xwzx = phpok('xwzx');?>
-            <li><h3>新闻中心</h3><h4><?php echo $xwzx['title'];?></h4><p><?php echo $xwzx['note'];?></p><a href="<?php echo $xwzx['url'];?>" class="btn">新闻中心</a></li>
+            <?php $first_new = phpok_current($xwzx['rslist']);?>
+            <li><h3>新闻中心</h3><h4><?php echo $first_new['title'];?></h4><p><?php echo $first_new['note'];?></p><a href="<?php echo $first_new['url'];?>" class="btn">新闻中心</a></li>
           </ul>
         </div>
       </div>
@@ -103,8 +108,8 @@
       <img src="tpl/www/images/map.png" alt="">
     </div>
     
-    <?php $arc = phpok('xszx');?>
-    <!-- <pre><?php echo print_r($arc);?></pre> -->
+    <?php $arc = phpok('xwzx');?>
+    <!-- <pre><?php echo print_r($arc['rslist']);?></pre> -->
   </section>
 <script type="text/javascript">
 $(document).ready(function(){

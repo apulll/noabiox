@@ -8,16 +8,21 @@
   <!-- include tpl=block_catelist_new -->
   <div class="article-list">
     <ul>
-
-      <!-- loop from=$rslist key=$key value=$value -->
+      <!-- loop from=$rslist key=$key value=$value id=$tmpid -->
 		<li>
 			<div class="article-box">
-			<!-- if $value.thumb -->
-			<a href="{$value.url}" title="{$value.title}"><img src="{$value.thumb.gd.auto}" alt="{$value.title}" /></a>
-			<!-- /if -->
+			
+			<a href="{$value.url}">
+				<!-- if $value.thumb -->
+				<img src="{$value.thumb.gd.auto}" alt="{$value.title}" width="490" height="310" />
+				<!-- else -->
+				<img src="{#images#}/news_placeholder.jpg" alt="{$value.title}" width="490" height="310" />
+				<!-- /if -->
+			</a>
+			
 			<!-- php:$dateline = phpok_date($value.dateline) -->
 			<h3><a href="{$value.url}" title="{$value.title}">{$value.title ? phpok_cut($value.title,20,'…') : phpok_cut($value.title,20,'…')}<span class="fr">{$dateline}</span></a></h3>
-			<p class="desc">{$value.note ? phpok_cut($value.note,225,'…') : phpok_cut($value.content,225,'…')}</p>
+			<p class="desc">{$value.note ? phpok_cut($value.note,60,'…') : phpok_cut($value.content,60,'…')}</p>
 			<div class="more"><a href="{$value.url}" title="查看{$value.title}详细信息">了解详情 <i></i></a></div>
 			</div>
 		</li>
@@ -25,6 +30,7 @@
     </ul>
       
   </div>
+
   <!-- include tpl=block_pagelist -->
 </div>
 </section>

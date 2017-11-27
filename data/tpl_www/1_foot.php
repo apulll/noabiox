@@ -4,47 +4,30 @@
         <div class="menu">
           <div class="col col-1">
             <h3>产品中心</h3>
+            <?php $cp = phpok('cpzxfl');?>
             <ul>
-              <li><a href="">菌粉原料产品</a></li>
-              <li><a href="">发酵原料产品</a></li>
-              <li><a href="">产品应用</a></li>
+              <?php $cp_sublist_id["num"] = 0;$cp['sublist']=is_array($cp['sublist']) ? $cp['sublist'] : array();$cp_sublist_id["total"] = count($cp['sublist']);$cp_sublist_id["index"] = -1;foreach($cp['sublist'] AS $key=>$value){ $cp_sublist_id["num"]++;$cp_sublist_id["index"]++; ?>
+              <li><a href="<?php echo $value['url'];?>"><?php echo $value['title'];?></a></li>
+              <?php } ?>
             </ul>
           </div>
+          <?php $list = phpok('menu');?>
+
+          <?php $list_rslist_id["num"] = 0;$list['rslist']=is_array($list['rslist']) ? $list['rslist'] : array();$list_rslist_id["total"] = count($list['rslist']);$list_rslist_id["index"] = -1;foreach($list['rslist'] AS $key=>$value){ $list_rslist_id["num"]++;$list_rslist_id["index"]++; ?>
+          
+          <?php if($value['id'] != 1401){ ?>
           <div class="col col-1">
-            <h3>关于诺佰克</h3>
-            <ul>
-              <li><a href="">企业概况</a></li>
-              <li><a href="">使命与责任</a></li>
-              <li><a href="">核心与优势</a></li>
-              <li><a href="">资质荣誉</a></li>
-            </ul>
-            <h3>研发中心</h3>
-            <ul>
-              <li><a href="">科研实力</a></li>
-              <li><a href="">核心技术</a></li>
-            </ul>
+          <h3><?php echo $value['title'];?></h3>
+          <ul>
+            <?php $value_sonlist_id["num"] = 0;$value['sonlist']=is_array($value['sonlist']) ? $value['sonlist'] : array();$value_sonlist_id["total"] = count($value['sonlist']);$value_sonlist_id["index"] = -1;foreach($value['sonlist'] AS $key=>$valueson){ $value_sonlist_id["num"]++;$value_sonlist_id["index"]++; ?>
+            <li><a href="<?php echo $valueson['url'];?>"><?php echo $valueson['title'];?></a></li>
+            <?php } ?>
+          </ul>
           </div>
-          <div class="col col-1">
-            <h3>学术中心</h3>
-            <ul>
-              <li><a href="">行业知识</a></li>
-              <li><a href="">学术前沿</a></li>
-              <li><a href="">学术会议</a></li>
-            </ul>
-            <h3>新闻中心</h3>
-            <ul>
-              <li><a href="">企业新闻</a></li>
-              <li><a href="">行业新闻</a></li>
-            </ul>
-          </div>
-          <div class="col col-1">
-            <h3>联系我们</h3>
-            <ul>
-              <li><a href="">商务合作</a></li>
-              <li><a href="">人才合作</a></li>
-            </ul>
-            <h3>国家微生态中心</h3>
-          </div>
+          <?php } ?>
+
+          
+          <?php } ?>
           <div class="contact-box">
             <h3>诺佰克(武汉)生物科技有限公司</h3>
             <ul>
@@ -61,7 +44,8 @@
       <p>京ICP备11017824号-4      京ICP证130164号     Copyright © 2006-2017 诺佰克</p>
       <div class="fr"><img src="tpl/www/images/b-logo.png" alt=""> <a href="" class="back-top"></a></div>
     </div>
-    
+    <?php $list = phpok('menu');?>
+    <!-- <pre><?php echo print_r($list['rslist']);?></pre> -->
 
   </footer>
 <?php echo phpok_head_css();?>

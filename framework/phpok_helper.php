@@ -947,3 +947,9 @@ function phpok_date($time)
 	
 	return date("Y-m-d",$time);
 }
+function phpok_current($arr){
+	reset($arr); //  将数组的内部指针指向第一个单元
+	$firstKey = current(array_keys($arr)); // 获取数组第一个键值
+	$firstVlaue = current($arr); // 得到第一个元素
+	return $firstVlaue;
+}
