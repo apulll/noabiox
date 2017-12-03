@@ -50,6 +50,7 @@
           	<?php $yfz_rslist_id["num"] = 0;$yfz['rslist']=is_array($yfz['rslist']) ? $yfz['rslist'] : array();$yfz_rslist_id["total"] = count($yfz['rslist']);$yfz_rslist_id["index"] = -1;foreach($yfz['rslist'] AS $key=>$value){ $yfz_rslist_id["num"]++;$yfz_rslist_id["index"]++; ?>
             <li><a href="<?php echo $value['url'];?>"><i class="icon-develop icon-<?php echo $value['sort'];?>"></i><p><?php echo $value['title'];?></p></a></li>
             <?php } ?>
+            <li><a href="/index.php?id=hxjs"><i class="icon-develop icon-2"></i><p>核心技术</p></a></li>
           </ul>
         </div>
       </div>
@@ -107,7 +108,7 @@
     <div class="map content">
       <?php $img = phpok('sydztp');?>
       <!-- <pre><?php echo print_r($img);?></pre> -->
-      
+
       <?php if($img){ ?>
         <img src="<?php echo $img['pic'];?>" alt="">
       <?php } ?>
