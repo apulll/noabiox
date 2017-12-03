@@ -12,6 +12,6 @@ if(!defined("PHPOK_SET")){exit("<h1>Access Denied</h1>");}
 
 $config["autoload_func"] = "";
 
-$config["is_vcode"] = true;
+$config["is_vcode"] = false;
 
 $config['gzip'] = false;

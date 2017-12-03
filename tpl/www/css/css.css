@@ -90,10 +90,10 @@
 .title h3 { display: inline-block; font-size: 22px; color: #333; }
 .title .fr { padding-top: 10px; }
 .title .search-box { position: relative; height: 24px; line-height: 1; }
-.title .search-box input { width: 34px; border-radius: 5px; background: #3466ad; height: 24px; outline: none; transition: width .5s; box-sizing: border-box; color: #fff; font-size: 12px; }
-.title .search-box input:focus { width: 200px; padding: 0 34px 0 10px; }
-.title .search-box input:focus + span { pointer-events: auto; }
-.title .search-box span { width: 34px; height: 24px; background: url("../images/icon-ser.png") center center no-repeat; position: absolute; top: 0; right: 0; pointer-events: none; cursor: pointer; }
+.title .search-box input { width: 200px; border-radius: 5px; background: #3466ad; height: 24px; outline: none; transition: width .5s; box-sizing: border-box; color: #fff; font-size: 12px; }
+/*.title .search-box input:focus { width: 200px; padding: 0 34px 0 10px; }*/
+/*.title .search-box input:focus + span { pointer-events: auto; }*/
+.title .search-box span { width: 34px; height: 24px; background: url("../images/icon-ser.png") center center no-repeat; position: absolute; top: 0; right: 0; }
 
 .cate-list { background: #014099; border-radius: 6px; overflow: hidden; width: 208px; }
 .cate-list > ul > li { border-bottom: 1px #7496c7 solid; }
@@ -200,7 +200,7 @@
 .article-business .feedback-list li { padding-bottom: 13px; }
 .article-business .feedback-list input { border: 1px #ccc solid; height: 56px; width: 366px; box-sizing: border-box; padding: 0 20px; font-size: 18px; }
 .article-business .feedback-list textarea { border: 1px #ccc solid; padding: 10px 20px; font-size: 18px; height: 202px; width: 498px; }
-.article-business .feedback-list button { width: 208px; height: 55px; line-height: 55px; display: inline-block; background: #014099; color: #fff; text-align: center; margin-top: 12px; }
+.article-business .feedback-list .send-button { width: 208px; height: 55px; line-height: 55px; display: inline-block; background: #014099; color: #fff; text-align: center; margin-top: 12px; }
 
 .article-person p { color: #666; font-size: 18px; line-height: 30px; }
 .article-person p.t2e { text-indent: 2em; }

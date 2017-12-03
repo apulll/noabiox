@@ -105,7 +105,12 @@
       </div>
     </div>
     <div class="map content">
-      <img src="tpl/www/images/map.png" alt="">
+      <?php $img = phpok('sydztp');?>
+      <!-- <pre><?php echo print_r($img);?></pre> -->
+      
+      <?php if($img){ ?>
+        <img src="<?php echo $img['pic'];?>" alt="">
+      <?php } ?>
     </div>
     
     <?php $arc = phpok('xwzx');?>

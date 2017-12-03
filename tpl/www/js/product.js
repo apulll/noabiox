@@ -14,6 +14,13 @@ $(function(){
     //   $(this).parent(".m").next('ul').slideDown();
     // }
   });
-
+  $('.js-search-box').on("click",'.js-search-sub', function(){
+    var $val = $('.js-search-input').val()
+    var href = window.location.href
+    var newHref = href.split('?')[1].split('&')
+    // console.log(newHref.length-1,'newHref')
+    href = href + '&keywords='+$val
+    window.location.href =  href;
+  })
 
 });

@@ -10,9 +10,9 @@
       <div class="title">
         <h3>产品中心</h3>
         <div class="fr">
-          <div class="search-box">
-            <input type="text">
-            <span></span>
+          <div class="search-box js-search-box">
+            <input type="text" class="js-search-input">
+            <span class="js-search-sub"></span>
           </div>
         </div>
       </div>
@@ -25,13 +25,24 @@
         <div class="section-main">
           <div class="tit">{$cate_rs.title}</div>
           <div class="products-list">
+            <!--if $rslist -->
             <ul>
+              
               <!-- loop from=$rslist key=$key value=$value id=$tmpid -->
+
+              
+              <!-- if $value.thumb -->
               <!-- php:$thumb = current($value.thumb) -->
-              <li><a href="{$value.url}" class="p-box"><span class="img"><img src="{$thumb.gd.thumb}" alt=""><span class="v-am"></span></span><h3>{$value.title}</h3><p>{$value.note}</p></a></li>
-			 <!-- /loop -->
+              <li><a href="{$value.url}" class="p-box"><span class="img"><img src="{$thumb.gd.thumb}" alt=""><span class="v-am"></span></span><h3>{$value.title}</h3><p>{$value.note ? phpok_cut($value.note,15,'…') : phpok_cut($value.content,15,'…')}</p></a></li>
+              <!-- else  -->
+              <li><a href="{$value.url}" class="p-box"><span class="img"><img src="" alt=""><span class="v-am"></span></span><h3>{$value.title}</h3><p>{$value.note ? phpok_cut($value.note,15,'…') : phpok_cut($value.content,15,'…')}</p></a></li>
+              <!-- /if -->
+              
+			       <!-- /loop -->
             </ul>
-            
+            <!-- else  -->
+              暂无内容
+            <!-- /if -->
           </div>
         </div>
       </div>
