@@ -1,5 +1,5 @@
 <?php if(!defined("PHPOK_SET")){exit("<h1>Access Denied</h1>");} ?><footer class="footer">
-    <div class="f-nav">
+    <div class="f-nav clearfix">
       <div class="content">
         <div class="menu">
           <div class="col col-1">
@@ -28,20 +28,22 @@
 
           
           <?php } ?>
-          <div class="contact-box">
-            <h3>诺佰克(武汉)生物科技有限公司</h3>
-            <ul>
-              <li>地址 : 湖北省武汉市汉南区纱帽街育才路551号</li>
-              <li>网址 : www.noabiox.com</li>
-              <li>邮箱 : nbk@noabiox.com</li>
-              <li>联系电话 : +86 27 5190 9933</li>
-            </ul>
-          </div>
+          
+        </div>
+        <div class="contact-box">
+          <?php $lxwm = phpok('lxwm');?>
+          <h3><?php echo $lxwm['company'];?></h3>
+          <ul>
+            <li>地址 :<?php echo $lxwm['address'];?></li>
+            <li>网址 : <?php echo $config['domain'];?></li>
+            <li>邮箱 : <?php echo $lxwm['email'];?></li>
+            <li>联系电话 : <?php echo $lxwm['tel'];?></li>
+          </ul>
         </div>
       </div>
     </div>
     <div class="copyright content">
-      <p>京ICP备11017824号-4      京ICP证130164号     Copyright © 2006-2017 诺佰克</p>
+      <p><?php echo $config['ext']['content'];?></p>
       <div class="fr"><img src="tpl/www/images/b-logo.png" alt=""> <a href="" class="back-top"></a></div>
     </div>
     <?php $list = phpok('menu');?>

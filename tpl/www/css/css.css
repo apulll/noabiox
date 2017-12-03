@@ -22,14 +22,15 @@
 
 .about-banner .nbox { height: 590px; background-repeat: no-repeat; background-position: center top; width: 100%; }
 
-.f-nav { height: 257px; background: #f7f7f7; }
+.f-nav { background: #f7f7f7;padding-bottom: 20px; }
+.f-nav .menu { width:626px;float:left; }
 .f-nav .col { width: 150px; display: inline-block; vertical-align: top; padding-top: 26px; }
 .f-nav .col h3 { padding-top: 10px; font-size: 14px; color: #333; }
 .f-nav .col ul { min-height: 90px; }
 .f-nav .col li { line-height: 22px; font-size: 12px; }
 .f-nav .col li a { color: #999; }
 .f-nav .col li a:hover { color: #014099; }
-.f-nav .contact-box { width: 350px; display: inline-block; vertical-align: top; padding-top: 26px; }
+.f-nav .contact-box { float:right;width: 350px; display: inline-block; vertical-align: top; padding-top: 26px; }
 .f-nav .contact-box h3 { padding-top: 10px; font-size: 14px; color: #333; }
 .f-nav .contact-box ul { padding-top: 26px; }
 .f-nav .contact-box li { line-height: 30px; font-size: 14px; color: #999; }
