@@ -1,0 +1,8 @@
+<ul>
+  <!-- catelist pid=$page_rs.id -->
+  <!-- loop from=$list.sublist key=$key value=$value id=$tmpid -->
+  <li class="{if $cate_rs.id == $value.id} current {/if}">
+    <a href="{$value.url}">{$value.title}</a>
+  </li>
+  <!-- /loop -->
+</ul>

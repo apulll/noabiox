@@ -1,0 +1,15 @@
+<pre>{:print_r($rs)}</pre>
+<ul>
+  <!-- catelist pid=$page_rs.id -->
+  <!-- loop from=$list.tree key=$key value=$value1 id=$tmpid -->
+
+  <!-- loop from=$value1.sublist key=$key value=$value id=$tmpid -->
+  <!-- if $value.parent_id == $cate_rs.id -->
+
+  
+  
+  <li {if $cate_rs.id == $value.id} class="current"{/if}><a href="{$value.url}" title="{$value.title}">{func phpok_cut $value.title 15 …}</a></li>
+  <!-- /if -->
+  <!-- /loop -->
+  <!-- /loop -->
+</ul>

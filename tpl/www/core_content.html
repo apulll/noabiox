@@ -1,0 +1,30 @@
+<!-- php:$title = $rs.title.' - '.$cate_rs.title.' - '.$page_rs.title -->
+<!-- include tpl=head title=$title menutitle=$page_rs.title -->
+<div class="banner about-banner">
+    <div class="nbox" {if $page_rs.banner} style="background-image:url('{$page_rs.banner.gd.auto}')"{/if}></div>
+  </div>
+<section>
+    <div class="content">
+      <div class="crumbs"><a href="{$page_rs.url}">{$page_rs.title}</a><i></i>
+        <!-- if $cate_rs -->
+        <a href="{$cate_rs.url}">{$cate_rs.title}</a>
+        <i></i>
+        <!-- /if -->
+        <span>{$rs.title}</span></div>
+      <div class="product-parameter">
+        <div class="l-img"><img src="img/pro-n1.png" alt=""><span class="v-am"></span></div>
+        <div class="r-desc">
+          <h3>{$rs.title}</h3>
+          <ul>
+            <!-- loop from=$rs.attrs key=$key value=$value id=$tmpid -->
+            <li><span>{$key}：</span> {$value}</li>
+            <!-- /loop -->
+          </ul>
+        </div>
+      </div>
+      <div class="product-content">
+        {$rs.content}
+      </div>
+    </div>
+  </section>
+<!-- include tpl=foot -->
