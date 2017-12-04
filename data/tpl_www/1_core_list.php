@@ -20,9 +20,13 @@
         <?php if($rslist){ ?>
         <div class="left">
           <div class="type-list">
-            <ul>
+            <ul >
               <?php $tmpid["num"] = 0;$rslist=is_array($rslist) ? $rslist : array();$tmpid["total"] = count($rslist);$tmpid["index"] = -1;foreach($rslist AS $key=>$value){ $tmpid["num"]++;$tmpid["index"]++; ?>
-              <li><a href="<?php echo $value['url'];?>"><?php echo $value['title'];?></a></li>
+              <?php if($value['thumb']){ ?>
+              <li class="js-core-detail"><span href="javascript:void(0)" class="item" data-title=<?php echo $value['title'];?> data-id=<?php echo $value['id'];?> data-mid=<?php echo $value['module_id'];?> data-thumb=<?php echo $value['thumb']['gd']['auto'];?>><?php echo $value['title'];?></span></li>
+              <?php } else { ?>
+              <li class="js-core-detail"><span href="javascript:void(0)" class="item" data-title=<?php echo $value['title'];?> data-id=<?php echo $value['id'];?> data-mid=<?php echo $value['module_id'];?> ><?php echo $value['title'];?></span></li>
+              <?php } ?>
               <?php } ?>
             </ul>
             
@@ -30,16 +34,27 @@
 
         </div>
         <div class="section-main">
-          <div class="main">
-            <h3>双歧杆菌</h3>
-            <div class="img"><img src="img/core-img-1.png" alt=""></div>
-            <p><span>来源：</span>早在1899年，法国巴斯德研究所的儿科医生Henry Tissier从母乳喂养的健康婴儿的粪便中分离出的一种厌氧的革兰氏阳性杆菌，当时命名为Bacillus bifidus。</p>
-            <p><span>成果：</span>《中国微生态学杂志》</p>
-            <p><span>功效：</span>葡萄糖酸钙、L-乳酸钙、柠檬酸钙酪蛋白磷酸肽、乳糖、柠檬酸、蔗糖甜橙粉（橙香精、麦芽糊精、变性淀粉、 浓缩橙汁）</p>
+          <div class="main js-core-detail-wrapper">
+      
+            <?php $result = phpok_value_detail_core($rslist);?>
+            <?php if($result){ ?>
+            <h3><?php echo $result['title'];?></h3>
+            <?php if($result['thumb']){ ?>
+            <div class="img"><img src="<?php echo $result['thumb']['gd']['auto'];?>" alt="" /></div>
+            <?php } else { ?>
+            <div class="img"><img src="images/core_placeholder.jpg" alt="" /></div>
+            <?php } ?>
+            <p><span>来源：</span><?php echo $result['from'];?></p>
+            <p><span>成果：</span><?php echo $result['rewards'];?></p>
+            <p><span>功效：</span><?php echo $result['effect'];?></p>
+            <?php } ?>
           </div>
         </div>
+        
         <?php } ?>
       </div>
     </div>
   </section>
+  
+  <script src="tpl/www/js/core_tech.js"></script>
 <?php $this->output("foot","file"); ?>

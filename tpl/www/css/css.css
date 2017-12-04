@@ -167,14 +167,14 @@
 .article-detail .art-content { font-size: 18px; line-height: 28px; color: #666; padding-bottom: 50px; }
 
 .tech-section { padding-bottom: 50px; }
-.tech-section .section-main { display: inline-block; vertical-align: top; width: calc(100% - 214px); padding-left: 30px; box-sizing: border-box; }
+.tech-section .section-main {min-height: 600px; display: inline-block; vertical-align: top; width: calc(100% - 214px); padding-left: 30px; box-sizing: border-box; }
 .tech-section .section-main .tit { font-size: 22px; color: #333; }
 .tech-section .left { display: inline-block; vertical-align: top; }
 .tech-section .type-list { background: #014099; border-radius: 6px; overflow: hidden; width: 208px; text-align: center; }
 .tech-section .type-list > ul > li { height: 60px; line-height: 58px; border-bottom: 1px rgba(255, 255, 255, 0.5) solid; box-sizing: border-box; }
-.tech-section .type-list > ul > li a { color: rgba(255, 255, 255, 0.5); font-size: 20px; display: block; }
+.tech-section .type-list > ul > li span { cursor:pointer; color: rgba(255, 255, 255, 0.5); font-size: 20px; display: block; }
 .tech-section .type-list > ul > li.current { background: #1eb9ee; border-bottom-color: #1eb9ee; }
-.tech-section .type-list > ul > li.current a { color: #fff; }
+.tech-section .type-list > ul > li.current span { color: #fff; }
 .tech-section .main { width: 430px; margin: 0 auto; }
 .tech-section .main h3 { font-size: 28px; color: #014099; line-height: 1; }
 .tech-section .main .img { padding: 30px 0; }

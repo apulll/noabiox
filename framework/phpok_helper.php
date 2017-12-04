@@ -953,3 +953,11 @@ function phpok_current($arr){
 	$firstVlaue = current($arr); // 得到第一个元素
 	return $firstVlaue;
 }
+
+function phpok_value_detail_core($arr){
+	$name_list = array();
+	foreach ($arr AS $key=>$value) {
+		$name_list[] = $value;
+	}
+	return $name_list[0];
+}

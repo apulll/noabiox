@@ -547,5 +547,19 @@ class list_model_base extends phpok_model
 		return array_keys($rslist);
 	}
 
+	//得到核心技术列表详情
+	public function get_core_detail($mid, $id){
+		if(!$id || !$mid) return true;
+
+		
+		
+
+		$sql = "SELECT * FROM ".$this->db->prefix."list_".$mid." WHERE id='".$id."'";
+
+		// $rs = $this->db->get_one($sql);
+		
+		return $this->db->get_one($sql);
+	}
+
 }
 ?>

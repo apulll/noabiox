@@ -20,9 +20,13 @@
         <!--if $rslist -->
         <div class="left">
           <div class="type-list">
-            <ul>
+            <ul >
               <!-- loop from=$rslist key=$key value=$value id=$tmpid -->
-              <li><a href="{$value.url}">{$value.title}</a></li>
+              <!-- if $value.thumb -->
+              <li class="js-core-detail"><span href="javascript:void(0)" class="item" data-title={$value.title} data-id={$value.id} data-mid={$value.module_id} data-thumb={$value.thumb.gd.auto}>{$value.title}</span></li>
+              <!-- else -->
+              <li class="js-core-detail"><span href="javascript:void(0)" class="item" data-title={$value.title} data-id={$value.id} data-mid={$value.module_id} >{$value.title}</span></li>
+              <!-- /if  -->
               <!-- /loop -->
             </ul>
             
@@ -30,16 +34,27 @@
 
         </div>
         <div class="section-main">
-          <div class="main">
-            <h3>双歧杆菌</h3>
-            <div class="img"><img src="img/core-img-1.png" alt=""></div>
-            <p><span>来源：</span>早在1899年，法国巴斯德研究所的儿科医生Henry Tissier从母乳喂养的健康婴儿的粪便中分离出的一种厌氧的革兰氏阳性杆菌，当时命名为Bacillus bifidus。</p>
-            <p><span>成果：</span>《中国微生态学杂志》</p>
-            <p><span>功效：</span>葡萄糖酸钙、L-乳酸钙、柠檬酸钙酪蛋白磷酸肽、乳糖、柠檬酸、蔗糖甜橙粉（橙香精、麦芽糊精、变性淀粉、 浓缩橙汁）</p>
+          <div class="main js-core-detail-wrapper">
+      
+            <!-- php:$result = phpok_value_detail_core($rslist) -->
+            <!-- if $result -->
+            <h3>{$result.title}</h3>
+            <!-- if $result.thumb -->
+            <div class="img"><img src="{$result.thumb.gd.auto}" alt="" /></div>
+            <!-- else -->
+            <div class="img"><img src="{#images#}/core_placeholder.jpg" alt="" /></div>
+            <!-- /if -->
+            <p><span>来源：</span>{$result.from}</p>
+            <p><span>成果：</span>{$result.rewards}</p>
+            <p><span>功效：</span>{$result.effect}</p>
+            <!-- /if -->
           </div>
         </div>
+        
         <!-- /if -->
       </div>
     </div>
   </section>
+  
+  <script src="js/core_tech.js"></script>
 <!-- include tpl=foot -->
